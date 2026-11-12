@@ -137,9 +137,9 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(88, 211, 154, 0); } 100% { box-shadow: 0 0 0 0 rgba(88, 211, 154, 0); } }
 h1 { font-size: clamp(60px, 15.5vw, 212px); font-weight: 400; line-height: .9; letter-spacing: -.045em; margin: 0; }
 h1 em { color: #E0A94A; }
-.line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.line { display: block; overflow: hidden; padding-bottom: .26em; margin-bottom: -.26em; }
 .line > span { display: block; }
-.js .line > span { transform: translateY(110%); transition: transform 1.25s cubic-bezier(.19, 1, .22, 1); }
+.js .line > span { transform: translateY(150%); transition: transform 1.25s cubic-bezier(.19, 1, .22, 1); }
 .js .line:nth-child(2) > span { transition-delay: .12s; }
 .js.loaded .line > span { transform: none; }
 .hero-lede { font-size: clamp(17px, 2vw, 22px); max-width: 30em; margin: 30px 0 30px; color: rgba(244, 235, 221, .86); }
