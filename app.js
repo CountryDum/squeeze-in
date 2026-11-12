@@ -144,6 +144,48 @@
     $('#fabText').textContent = `View order · ${n}`;
   };
 
+  /* ---------- star ratings ----------
+     TEST MODE: votes are saved on this visitor's own device only
+     (localStorage), so each person sees just their own vote. To share
+     counts between all visitors, replace get() and vote() in `ratings`
+     with calls to a database. One vote per item per device: voting
+     again changes the rating, it does not add a second vote. */
+  const ratings = {
+    mine: (() => { try { return JSON.parse(localStorage.getItem('sq-ratings')) || {}; } catch (e) { return {}; } })(),
+    get(id) { const m = this.mine[id] || 0; return { count: m ? 1 : 0, avg: m, mine: m }; },
+    vote(id, n) { this.mine[id] = n; try { localStorage.setItem('sq-ratings', JSON.stringify(this.mine)); } catch (e) {} },
+  };
+  const STAR = '<path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.6 9.7l5.8-.8z"/>';
+  const stars = (id, label = id) => {
+    const wrap = el('span', { className: 'rate' });
+    const group = el('span', { className: 'rate-stars', role: 'group', ariaLabel: `Rate ${label}` });
+    const meta = el('span', { className: 'rate-meta' });
+    const fill = n => btns.forEach((b, i) => b.classList.toggle('on', i < n));
+    const paint = () => {
+      const r = ratings.get(id);
+      fill(Math.round(r.avg));
+      btns.forEach((b, i) => b.setAttribute('aria-pressed', r.mine === i + 1));
+      meta.textContent = r.count ? `${r.avg.toFixed(1)} · ${r.count} vote${r.count > 1 ? 's' : ''}` : '';
+    };
+    const btns = [1, 2, 3, 4, 5].map(n => {
+      const b = el('button', { type: 'button', ariaLabel: `${n} star${n > 1 ? 's' : ''}` }, svg(STAR));
+      b.onclick = () => {
+        const first = !ratings.get(id).mine;
+        ratings.vote(id, n);
+        paint();
+        toast(first ? `Thanks for rating ${label}` : 'Your rating was updated');
+      };
+      b.onmouseenter = () => fill(n);
+      return b;
+    });
+    group.onmouseleave = paint;
+    group.append(...btns);
+    wrap.append(group, meta);
+    paint();
+    return wrap;
+  };
+  $('#visitRate').append(stars('__visit', 'your visit'));
+
   /* ---------- signatures rail ---------- */
   const rail = $('#sigRail');
   SIGNATURES.forEach((s, i) => {
@@ -178,7 +220,7 @@
         add.onclick = () => addItem(clean(it.n), add);
         const row = el('div', { className: 'item' },
           el('div', { className: 'item-body' },
-            el('div', { className: 'item-name' }, it.n, it.tag ? el('span', { className: 'tag', textContent: it.tag }) : null),
+            el('div', { className: 'item-name' }, it.n, it.tag ? el('span', { className: 'tag', textContent: it.tag }) : null, stars(clean(it.n))),
             it.d ? el('p', { className: 'item-desc', textContent: it.d }) : null),
           it.price ? el('span', { className: 'item-price', textContent: money(it.price) }) : null, add);
         row.dataset.search = `${it.n} ${it.d || ''} ${it.tag || ''} ${g.name}`.toLowerCase();
