@@ -201,7 +201,8 @@ h1 em { color: #E0A94A; }
 /* ---------- menu ---------- */
 .menu { padding: clamp(80px, 11vw, 160px) 0 60px; }
 .menu-head { margin-bottom: 40px; }
-.menu-bar { display: grid; gap: 14px; position: sticky; top: 64px; z-index: 20; padding: 12px 0; background: linear-gradient(var(--bg) 78%, transparent); margin-bottom: 20px; }
+.nav-hidden .menu-bar { top: 0 !important; }
+.menu-bar { transition: top .5s; display: grid; gap: 14px; position: sticky; top: 64px; z-index: 20; padding: 12px 0; background: var(--bg); box-shadow: 0 0 0 100vmax var(--bg); clip-path: inset(0 -100vmax); border-bottom: 1px solid var(--line); margin-bottom: 20px; }
 .tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin-inline: -20px; padding-inline: 20px; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab { flex: none; height: 46px; padding: 0 22px; border-radius: 100px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: 500 15px "Instrument Sans", sans-serif; cursor: pointer; transition: all .3s; }

@@ -338,6 +338,7 @@
     const y = scrollY;
     nav.classList.toggle('solid', y > 40 || !overlay.hidden);
     nav.classList.toggle('hide', y > lastY && y > 700 && overlay.hidden);
+    root.classList.toggle('nav-hidden', nav.classList.contains('hide'));
     lastY = y;
     toTop.hidden = y < 600;
     if (reduced) return;
