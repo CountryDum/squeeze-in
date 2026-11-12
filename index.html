@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Squeeze-In Restaurant &amp; Deck | Canyon City, Oregon</title>
+<meta name="description" content="Hearty breakfast served all day, handmade burgers and homemade pie in Canyon City, Oregon. Dine in, sit on the deck, or order ahead for pickup. (541) 575-1045.">
+<meta name="theme-color" content="#0E0B09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230E0B09'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' text-anchor='middle' fill='%23E0A94A'%3ES%3C/text%3E%3C/svg%3E">
+<script>
+  try { var t = localStorage.getItem('sq-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  document.documentElement.classList.add('js');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/stock/pancakes-dark.jpg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="curtain-mark"><i>Squeeze-In</i><span>Restaurant &amp; Deck</span></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="wordmark" href="#top" aria-label="Squeeze-In, back to top"><i>Squeeze-In</i><span>Restaurant &amp; Deck</span></a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="#story">Our story</a>
+    <a href="#signatures">Favorites</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+    </button>
+    <button class="pill solid" id="openOrder" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+      <span class="pill-label">Order pickup</span><b class="count" id="navCount" hidden>0</b>
+    </button>
+    <button class="icon-btn burger" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="overlay-nav" id="overlayNav" hidden>
+  <nav aria-label="Sections">
+    <a href="#story"><small>01</small>Our story</a>
+    <a href="#signatures"><small>02</small>Favorites</a>
+    <a href="#menu"><small>03</small>Menu</a>
+    <a href="#gallery"><small>04</small>Gallery</a>
+    <a href="#visit"><small>05</small>Visit</a>
+  </nav>
+  <a class="overlay-phone" href="tel:+15415751045">(541) 575-1045</a>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-media" data-parallax="0.25"><img src="images/stock/pancakes-dark.jpg" alt="" fetchpriority="high"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <p class="kicker reveal"><span class="dot" id="openDot"></span><span id="openText">Open daily in Canyon City, Oregon</span></p>
+      <h1 aria-label="Come hungry. Squeeze in.">
+        <span class="line"><span>Come hungry.</span></span>
+        <span class="line"><span><em>Squeeze in.</em></span></span>
+      </h1>
+      <p class="hero-lede reveal">Breakfast all day, handmade burgers and homemade pie, served by folks who are glad you came.</p>
+      <div class="hero-cta reveal">
+        <button class="pill solid xl" type="button" data-open-order>Order pickup</button>
+        <a class="pill ghost xl" href="#menu">Explore the menu</a>
+      </div>
+    </div>
+    <dl class="hero-strip reveal">
+      <div><dt>Today</dt><dd id="todayHours">6 am – 8 pm</dd></div>
+      <div><dt>Find us</dt><dd><a href="https://www.google.com/maps/dir/?api=1&destination=Squeeze-In+Restaurant+%26+Deck+295+S+Canyon+City+E+Rd+Canyon+City+OR+97820" target="_blank" rel="noopener">295 S Canyon City E Rd</a></dd></div>
+      <div><dt>Call</dt><dd><a href="tel:+15415751045">(541) 575-1045</a></dd></div>
+      <div><dt>Guests say</dt><dd><span class="gold">★</span> 4.4 from 570+ reviews</dd></div>
+    </dl>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+  <!-- STORY -->
+  <section class="story wrap" id="story">
+    <div class="story-copy">
+      <p class="eyebrow reveal">Our story</p>
+      <h2 class="statement reveal">A Grant County table where the coffee keeps coming and <em>nobody leaves hungry.</em></h2>
+      <p class="reveal">The Squeeze-In has been feeding locals, travelers and out-of-town guests for decades. After many years on Main Street in John Day, we moved up the road to Canyon City, a historic gold strike town, and brought the whole menu with us.</p>
+      <p class="reveal">The daily fare is always filling, satisfying and tasty, and the ticket won't cost you your next paycheck. Come in, relax and enjoy a good meal.</p>
+      <ul class="stats reveal">
+        <li><b data-count="4.4" data-decimals="1">4.4</b><span>Stars on Google</span></li>
+        <li><b data-count="570" data-suffix="+">570+</b><span>Guest reviews</span></li>
+        <li><b data-count="7">7</b><span>Days a week</span></li>
+      </ul>
+    </div>
+    <div class="story-art">
+      <figure class="frame tall reveal" data-parallax="-0.06"><img src="images/stock/diner.jpg" alt="A cozy diner booth by the window" loading="lazy"></figure>
+      <figure class="frame small reveal" data-parallax="0.08"><img src="images/stock/coffee.jpg" alt="A white mug of diner coffee" loading="lazy"></figure>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#circ">BREAKFAST ALL DAY • HOMEMADE PIE • COME HUNGRY • </textPath></text></svg>
+        <i>S</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURES -->
+  <section class="signatures" id="signatures">
+    <div class="wrap sig-head">
+      <div>
+        <p class="eyebrow reveal">House favorites</p>
+        <h2 class="reveal">The plates people <em>drive in for</em></h2>
+      </div>
+      <div class="sig-arrows reveal">
+        <button class="icon-btn ring" id="sigPrev" type="button" aria-label="Previous favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="icon-btn ring" id="sigNext" type="button" aria-label="More favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="sig-rail" id="sigRail" tabindex="0" aria-label="House favorites"></div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu wrap" id="menu">
+    <div class="menu-head">
+      <p class="eyebrow reveal">The menu</p>
+      <h2 class="reveal">Made to order, <em>every time</em></h2>
+      <p class="sub reveal">Breakfast is served all day. Dinner entrees start at 4 pm. Tap the plus on anything to start a pickup order.</p>
+    </div>
+    <div class="menu-bar reveal">
+      <div class="tabs" role="tablist" aria-label="Menu sections" id="menuTabs"></div>
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input type="search" id="menuSearch" placeholder="Search the menu" aria-label="Search the menu" autocomplete="off">
+      </label>
+    </div>
+    <div class="menu-body">
+      <aside class="menu-photo" aria-hidden="true"><div class="frame"><img id="menuPhoto" src="images/stock/bacon-eggs.jpg" alt=""></div><p id="menuPhotoNote">Served all day.</p></aside>
+      <div id="menuPanels"></div>
+    </div>
+    <p class="fineprint">Items marked * may be cooked to order. Consuming raw or undercooked meats, poultry, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Menu and availability may change; ask your server about daily specials and gluten-free choices.</p>
+  </section>
+
+  <!-- DECK BAND -->
+  <section class="band">
+    <div class="band-media" data-parallax="0.18"><img src="images/stock/deck.jpg" alt="" loading="lazy"></div>
+    <div class="band-shade"></div>
+    <div class="band-inner wrap">
+      <p class="eyebrow reveal">Inside or out</p>
+      <h2 class="reveal">Pull up a chair. <em>The deck is open.</em></h2>
+      <ul class="perks reveal">
+        <li>Outdoor seating</li><li>Dogs welcome outside</li><li>Kids' menu</li><li>Gluten-free options</li><li>Take-out all day</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-sec wrap" id="gallery">
+    <div class="menu-head">
+      <p class="eyebrow reveal">Gallery</p>
+      <h2 class="reveal">A look <em>around</em></h2>
+    </div>
+    <div class="masonry" id="galleryGrid"></div>
+  </section>
+
+  <!-- ORDER CTA -->
+  <section class="cta wrap">
+    <div class="cta-card reveal">
+      <div>
+        <p class="eyebrow">Order ahead</p>
+        <h2>Hot and ready <em>when you walk in.</em></h2>
+        <p>Build your order here, tell us when you're coming, and pay at pickup.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="pill solid xl" type="button" data-open-order>Start a pickup order</button>
+        <a class="pill ghost xl" href="tel:+15415751045">Call (541) 575-1045</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit wrap" id="visit">
+    <div class="visit-info">
+      <p class="eyebrow reveal">Visit</p>
+      <h2 class="reveal">Find us in <em>Canyon City</em></h2>
+      <address class="reveal">295 S Canyon City E Rd<br>Canyon City, OR 97820</address>
+      <table class="hours reveal" id="hoursTable"><tbody></tbody></table>
+      <p class="fineprint reveal">Holiday hours may vary. Give us a call.</p>
+      <div class="visit-actions reveal">
+        <a class="pill solid" href="https://www.google.com/maps/dir/?api=1&destination=Squeeze-In+Restaurant+%26+Deck+295+S+Canyon+City+E+Rd+Canyon+City+OR+97820" target="_blank" rel="noopener">Get directions</a>
+        <a class="pill ghost" href="tel:+15415751045">Call us</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Map to Squeeze-In Restaurant &amp; Deck" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Squeeze-In+Restaurant+%26+Deck,+295+S+Canyon+City+E+Rd,+Canyon+City,+OR+97820&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-mark" aria-hidden="true">Squeeze-In</div>
+  <div class="wrap footer-row">
+    <p>295 S Canyon City E Rd, Canyon City, OR 97820</p>
+    <p><a href="tel:+15415751045">(541) 575-1045</a></p>
+    <p>© <span id="year"></span> Squeeze-In Restaurant &amp; Deck</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="fab" id="fab" type="button" data-open-order hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+  <span id="fabText">View order</span>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ORDER DRAWER -->
+<dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+  <div class="drawer-head">
+    <h3 id="drawerTitle">Your <em>pickup order</em></h3>
+    <button class="icon-btn ring" type="button" data-close aria-label="Close order"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <ul class="cart" id="cartList"></ul>
+    <p class="cart-empty" id="cartEmpty">Nothing here yet. Add a few things from the menu and they'll show up here.</p>
+    <form class="order-form" id="orderForm" novalidate>
+      <label class="field"><span>Name</span><input name="name" autocomplete="name" required></label>
+      <label class="field"><span>Phone</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required></label>
+      <label class="field"><span>Pickup time</span><select name="time" id="pickupTime"></select></label>
+      <label class="field"><span>Notes (allergies, sides, how you like it cooked)</span><textarea name="notes" rows="2"></textarea></label>
+      <p class="form-error" id="formError" role="alert" hidden></p>
+      <button class="pill solid xl" type="submit">Review order</button>
+      <p class="fineprint">We'll confirm your total by phone. Pay at pickup.</p>
+    </form>
+    <div class="confirm" id="confirm" hidden>
+      <h4 id="confirmTitle">Almost done</h4>
+      <p id="confirmLead"></p>
+      <pre id="orderSummary"></pre>
+      <div class="confirm-actions">
+        <a class="pill solid" href="tel:+15415751045">Call to confirm</a>
+        <button class="pill ghost" type="button" id="copyOrder">Copy order</button>
+        <button class="pill ghost" type="button" id="editOrder">Edit</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- LIGHTBOX -->
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button class="icon-btn ring lb-close" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="icon-btn ring lb-prev" type="button" id="lbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <figure><img id="lightboxImg" alt=""><figcaption id="lightboxCap"></figcaption></figure>
+  <button class="icon-btn ring lb-next" type="button" id="lbNext" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
